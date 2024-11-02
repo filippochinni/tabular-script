@@ -12,7 +12,8 @@ class TableMaker:
 
         self._data_frame = self._read_data()
 
-        return tabulate(self._data_frame, headers='keys', showindex=False, tablefmt='psql', colalign=('center',))
+        table = tabulate(self._data_frame, headers='keys', showindex=False, tablefmt='psql', colalign=('center',))
+        return table.replace("nan", "   ")
 
     def _read_data(self):
         self._data_frame = read_csv(self.input_file, header=self.header, encoding_errors='ignore')
