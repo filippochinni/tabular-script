@@ -21,6 +21,10 @@ def main():
         file_handler(args.input, args.output)
 
     for input_file, output_file in zip(file_handler.input_files, file_handler.output_files):
+        if (not os.path.exists(input_file)) or (os.path.getsize(input_file) == 0):
+            print(f"File {os.path.basename(input_file)} does not exist or is empty, skipping...\n")
+            continue
+
         table = table_maker(input_file, output_file)
         written = file_handler.write_table(table, output_file)
 
