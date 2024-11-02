@@ -7,11 +7,11 @@ Alternatively, a JSON file can be provided with mapping of input files to output
 ## Usage
 ### Command line usage
 ```
-RankerScript [-h] [-i INPUT] [-o OUTPUT] [--files-mapping FILES_MAPPING] [--header-disabled]
+rankerscript [-h] [-i INPUT] [-o OUTPUT] [--files-mapping FILES_MAPPING] [--header-disabled]
 ```
 ### Options
 
-`-h`, `--help` &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; show this help message and exit
+`-h`, `--help` &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp; Show this help message and exit
 
 `-i INPUT`, `--input INPUT` &emsp;&emsp;&emsp;&emsp;Input file path, CSV format, can use relative path
 
@@ -19,7 +19,7 @@ RankerScript [-h] [-i INPUT] [-o OUTPUT] [--files-mapping FILES_MAPPING] [--head
 
 `--files-mapping FILES_MAPPING` &emsp;&ensp;JSON file with mapping of input files to output files
 
-`--header-disabled` &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;First row of input files is NOT header
+`--header-disabled` &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp; First row of input files is NOT header
 
 
 ## Requirements
