@@ -5,7 +5,7 @@ from script.FileHandler import FileHandler
 from script.TableMaker import TableMaker
 
 
-if __name__ == '__main__':
+def main():
 
     cl_parser = CLParser()
 
@@ -31,4 +31,8 @@ if __name__ == '__main__':
             print(f"{os.path.basename(output_file)} has not changed, there is no need to update the file")
             print(f"Nothing written to {output_file}")
             print(f"Computed Table:\n\n{table}\n")
+
+
+if __name__ == '__main__':
+    main()
 

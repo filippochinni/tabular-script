@@ -1,7 +1,4 @@
-import os
-from datetime import datetime
-
-from pandas import DataFrame, read_csv
+from pandas import read_csv
 from tabulate import tabulate
 
 
