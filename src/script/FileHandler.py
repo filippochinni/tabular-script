@@ -35,8 +35,8 @@ class FileHandler:
         if not self._check_differences(table, output_file):
             return False
 
-        sep = '\t' * 10
-        timestamp = f"Last Update: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        sep = '\t' * 8
+        timestamp = f"Last Update: {datetime.now().strftime('%Y-%m-%d - %H:%M:%S')}"
 
         with open(output_file, 'w') as output_file_write:
             output_file_write.write(f"{file_name}{sep}{timestamp}\n\n\n")
