@@ -3,6 +3,7 @@ import os
 from command_line.CLParser import CLParser
 from script.FileHandler import FileHandler
 from script.TableMaker import TableMaker
+from script.PrintHandler import PrintHandler
 
 
 def main():
@@ -20,21 +21,29 @@ def main():
     else:
         file_handler(args.input, args.output)
 
+    print_handler = PrintHandler()
+
+    print_handler.print_separator(symbol='@')
     for input_file, output_file in zip(file_handler.input_files, file_handler.output_files):
         if (not os.path.exists(input_file)) or (os.path.getsize(input_file) == 0):
-            print(f"File {os.path.basename(input_file)} does not exist or is empty, skipping...\n")
+            print_handler.print_status_skipped(input_file)
+            print_handler.update_resume(output_file, 0)
+            print_handler.print_separator()
             continue
 
         table = table_maker(input_file, output_file)
         written = file_handler.write_table(table, output_file)
 
         if written:
-            print(f"Computing table for {input_file}...")
-            print(f'Table written to {output_file}\n\n{table}\n')
+            print_handler.print_status_updated(input_file, output_file, table)
+            print_handler.update_resume(output_file, 1)
         else:
-            print(f"{os.path.basename(output_file)} has not changed, there is no need to update the file")
-            print(f"Nothing written to {output_file}")
-            print(f"Computed Table:\n\n{table}\n")
+            print_handler.print_status_unchanged(output_file, table)
+            print_handler.update_resume(output_file, 2)
+
+        print_handler.print_separator()
+
+    print_handler.print_resume()
 
 
 if __name__ == '__main__':

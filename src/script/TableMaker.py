@@ -1,4 +1,4 @@
-from pandas import read_csv, DataFrame, concat as pd_concat
+from pandas import read_csv, DataFrame
 from tabulate import tabulate
 
 
