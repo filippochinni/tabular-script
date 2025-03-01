@@ -43,6 +43,7 @@ def main():
 
         print_handler.print_separator()
 
+    print_handler.print_separator(symbol='@')
     print_handler.print_resume()
 
 

@@ -32,7 +32,7 @@ class PrintHandler:
     def print_resume(self):
         padding = max([len(key) for key in self.resume.keys()]) + 5
 
-        print("\nResume:\n")
+        print("Resume:\n")
         for key, value in self.resume.items():
             if value == 1:
                 print(f"{key:<{padding}} --> \t{self._GREEN}Updated{self._RESET}")
@@ -40,4 +40,5 @@ class PrintHandler:
                 print(f"{key:<{padding}} --> \t{self._YELLOW}Unchanged{self._RESET}")
             else:
                 print(f"{key:<{padding}} --> \t{self._RED}Skipped{self._RESET}")
+        print("")
 
