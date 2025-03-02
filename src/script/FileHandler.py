@@ -38,14 +38,14 @@ class FileHandler:
         sep = '\t' * 8
         timestamp = f"Last Update: {datetime.now().strftime('%Y-%m-%d - %H:%M:%S')}"
 
-        with open(output_file, 'w') as output_file_write:
+        with open(output_file, 'w', encoding='utf-8') as output_file_write:
             output_file_write.write(f"{file_name}{sep}{timestamp}\n\n\n")
             output_file_write.write(table)
 
         return True
 
     def _check_differences(self, table, output_file):
-        with open(output_file, 'r') as output_file:
+        with open(output_file, 'r', encoding='utf-8') as output_file:
             old_table = output_file.read().partition('\n\n\n')[2]
 
         if old_table != table:
