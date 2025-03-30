@@ -3,10 +3,10 @@ import argparse
 
 class CLParser:
     def __init__(self):
-        self.DESCRIPTION = "RankerScript is a command line tool that reads files in CSV format and outputs them in a tabular format.\n" \
+        self.DESCRIPTION = "TabularScript is a command line tool that reads files in CSV format and outputs them in a tabular format.\n" \
                             "Inputs and Output files needs to be specified as cl args; multiple I/O files couples can be specified.\n" \
                             "Alternatively, a JSON file can be provided with mapping of input files to output files.\n"
-        self.parser = argparse.ArgumentParser(prog="rankerscript", description=self.DESCRIPTION, formatter_class=argparse.RawTextHelpFormatter)
+        self.parser = argparse.ArgumentParser(prog="tabularscript", description=self.DESCRIPTION, formatter_class=argparse.RawTextHelpFormatter)
 
         self.parser.add_argument("-i", "--input", action='append', help="Input file path, CSV format, can use relative path")
         self.parser.add_argument("-o", "--output", action='append', help="Output file path, can use relative path")

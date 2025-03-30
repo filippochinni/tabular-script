@@ -7,11 +7,11 @@ def read_requirements():
 
 
 setup(
-    name='rankerscript',
+    name='tabularscript',
     version='0.1.0',
     entry_points={
         'console_scripts': [
-            'rankerscript = main:main'
+            'tabularscript = main:main'
         ],
     },
     install_requires=read_requirements(),

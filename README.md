@@ -1,13 +1,13 @@
-# RankerScript
+# TabularScript
 
-RankerScript is a command line tool that reads files in CSV format and outputs them in a tabular format.<br>
+TabularScript is a command line tool that reads files in CSV format and outputs them in a tabular format.<br>
 Inputs and Output files needs to be specified as cl args; multiple I/O files couples can be specified.<br>
 Alternatively, a JSON file can be provided with mapping of input files to output files.
 
 ## Usage
 ### Command line usage
 ```
-rankerscript [-h] [-i INPUT] [-o OUTPUT] [--files-mapping FILES_MAPPING] [--header-disabled]
+tabularscript [-h] [-i INPUT] [-o OUTPUT] [--files-mapping FILES_MAPPING] [--header-disabled]
 ```
 ### Options
 
