@@ -8,7 +8,7 @@ def read_requirements():
 
 setup(
     name='tabularscript',
-    version='0.1.0',
+    version='0.1.1',
     entry_points={
         'console_scripts': [
             'tabularscript = main:main'

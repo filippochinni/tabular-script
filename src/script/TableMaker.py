@@ -16,7 +16,7 @@ class TableMaker:
         return table.replace(" nan ", "     ")
 
     def _read_data(self):
-        self._data_frame = read_csv(self.input_file, header=self.header, encoding_errors='ignore')
+        self._data_frame = read_csv(self.input_file, header=self.header, encoding_errors='ignore', dtype=str)
         self._data_frame = self._insert_line_padding()
         self._data_frame.index = range(1, len(self._data_frame) + 1)
         return self._data_frame
